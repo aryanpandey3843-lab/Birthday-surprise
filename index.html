@@ -11,9 +11,9 @@
 
 <style>
 
-/* =====================================
+/* =====================================================
    BASIC
-===================================== */
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -42,9 +42,9 @@ body{
 }
 
 
-/* =====================================
+/* =====================================================
    COMMON PAGE
-===================================== */
+===================================================== */
 
 .page{
     width:100%;
@@ -52,20 +52,14 @@ body{
 
     position:relative;
 
+    display:none;
+
     text-align:center;
+
+    padding:25px 15px 40px;
 
     overflow-x:hidden;
     overflow-y:auto;
-
-    padding:
-        max(15px,env(safe-area-inset-top))
-        max(15px,env(safe-area-inset-right))
-        max(20px,env(safe-area-inset-bottom))
-        max(15px,env(safe-area-inset-left));
-}
-
-.hidden{
-    display:none !important;
 }
 
 button,
@@ -74,12 +68,11 @@ a{
 }
 
 
-/* =====================================
+/* =====================================================
    PAGE 1 — WHATSAPP
-===================================== */
+===================================================== */
 
 #linkPage{
-
     display:flex;
 
     justify-content:center;
@@ -88,9 +81,8 @@ a{
 
 .whatsapp{
 
-    width:min(90vw,520px);
-
-    max-width:100%;
+    width:100%;
+    max-width:600px;
 
     background:#e7ffdb;
 
@@ -99,9 +91,9 @@ a{
     box-shadow:
         0 15px 40px rgba(0,0,0,.3);
 
-    text-align:left;
-
     overflow:hidden;
+
+    text-align:left;
 }
 
 .whatsapp-header{
@@ -110,31 +102,31 @@ a{
 
     color:white;
 
-    padding:22px;
+    padding:25px;
 
-    font-size:clamp(20px,2vw,28px);
+    font-size:28px;
 
     font-weight:bold;
 }
 
 .whatsapp-body{
 
-    padding:clamp(25px,4vw,40px);
+    padding:30px;
 
     color:#333;
 
-    font-size:clamp(18px,2vw,23px);
+    font-size:23px;
 
-    line-height:1.7;
+    line-height:1.8;
 }
 
 .open-btn{
 
     display:inline-block;
 
-    margin-top:20px;
+    margin-top:25px;
 
-    padding:15px 28px;
+    padding:17px 30px;
 
     background:#128c7e;
 
@@ -142,21 +134,19 @@ a{
 
     text-decoration:none;
 
-    border-radius:12px;
+    border-radius:14px;
+
+    font-size:22px;
 
     font-weight:bold;
-
-    font-size:clamp(17px,1.8vw,22px);
 }
 
 
-/* =====================================
+/* =====================================================
    PAGE 2 — START
-===================================== */
+===================================================== */
 
 #startPage{
-
-    display:none;
 
     justify-content:center;
     align-items:center;
@@ -164,13 +154,12 @@ a{
 
 .start-box{
 
-    width:min(90vw,850px);
+    width:100%;
+    max-width:900px;
 
-    max-width:100%;
+    padding:60px 40px;
 
-    padding:clamp(35px,6vw,70px);
-
-    background:rgba(255,255,255,.18);
+    background:rgba(255,255,255,.20);
 
     border:4px solid white;
 
@@ -184,7 +173,7 @@ a{
 
     color:white;
 
-    font-size:clamp(20px,2.5vw,30px);
+    font-size:30px;
 
     font-weight:bold;
 }
@@ -193,31 +182,37 @@ a{
 
     color:white;
 
-    font-size:clamp(42px,7vw,90px);
-
-    margin:20px 0;
+    font-size:80px;
 
     line-height:1.15;
 
-    text-shadow:5px 5px #8b145e;
+    margin:25px 0;
+
+    text-shadow:
+        6px 6px #8b145e;
 
     overflow-wrap:break-word;
+}
+
+.name{
+
+    color:#fff4a8;
 }
 
 .start-text{
 
     color:white;
 
-    font-size:clamp(18px,2.3vw,28px);
+    font-size:27px;
 
     line-height:1.7;
 }
 
 .start-btn{
 
-    margin-top:30px;
+    margin-top:35px;
 
-    padding:17px 35px;
+    padding:20px 40px;
 
     border:4px solid #8b145e;
 
@@ -227,7 +222,7 @@ a{
 
     color:white;
 
-    font-size:clamp(19px,2vw,26px);
+    font-size:25px;
 
     font-weight:bold;
 
@@ -235,29 +230,25 @@ a{
 
     box-shadow:
         0 7px 0 #70104b;
-
-    max-width:100%;
 }
 
 
-/* =====================================
+/* =====================================================
    PAGE 3 — BIRTHDAY
-===================================== */
+===================================================== */
 
 #birthdayPage{
 
-    display:none;
+    padding-top:35px;
 }
 
 .birthday-content{
 
-    width:min(95vw,1100px);
+    width:100%;
 
-    max-width:100%;
+    max-width:1100px;
 
-    margin:0 auto;
-
-    padding-top:clamp(20px,5vh,70px);
+    margin:auto;
 
     position:relative;
 
@@ -268,57 +259,46 @@ a{
 
     color:white;
 
-    font-size:clamp(42px,7vw,100px);
+    font-size:90px;
 
     line-height:1.15;
 
     margin:0;
 
     text-shadow:
-        6px 6px #85125a;
+        7px 7px #85125a;
 
     animation:pulse 1.5s infinite;
 
     overflow-wrap:break-word;
 }
 
-.name{
-
-    color:#fff4a8;
-}
-
 .subtitle{
 
     color:white;
 
-    font-size:clamp(18px,2.3vw,28px);
+    font-size:28px;
 
     font-weight:bold;
 
-    margin-top:20px;
+    margin-top:25px;
 
     line-height:1.5;
 }
 
 
-/* =====================================
+/* =====================================================
    CAKE
-===================================== */
+===================================================== */
 
 .cake-area{
 
-    margin:
-        clamp(20px,4vh,40px)
-        auto;
+    width:300px;
+    height:280px;
 
-    width:260px;
-
-    height:240px;
+    margin:35px auto;
 
     position:relative;
-
-    transform:
-        scale(clamp(.8,1vw,1.1));
 }
 
 .cake{
@@ -326,22 +306,20 @@ a{
     position:absolute;
 
     bottom:25px;
+    left:65px;
 
-    left:45px;
-
-    width:170px;
-
-    height:90px;
+    width:200px;
+    height:105px;
 
     background:#ff77b8;
 
     border-radius:
         15px 15px 25px 25px;
 
-    border:5px solid white;
+    border:6px solid white;
 
     box-shadow:
-        0 8px 0 #a71967;
+        0 9px 0 #a71967;
 }
 
 .cake:before{
@@ -350,20 +328,18 @@ a{
 
     position:absolute;
 
-    top:-45px;
+    top:-55px;
+    left:25px;
 
-    left:20px;
-
-    width:120px;
-
-    height:50px;
+    width:140px;
+    height:60px;
 
     background:#fff1f8;
 
     border-radius:
         15px 15px 8px 8px;
 
-    border:5px solid white;
+    border:6px solid white;
 }
 
 .cake:after{
@@ -372,24 +348,21 @@ a{
 
     position:absolute;
 
-    left:65px;
+    left:75px;
+    top:28px;
 
-    top:25px;
-
-    font-size:40px;
+    font-size:45px;
 }
 
 .candle{
 
     position:absolute;
 
-    top:-80px;
+    top:-95px;
+    left:120px;
 
-    left:105px;
-
-    width:13px;
-
-    height:38px;
+    width:15px;
+    height:45px;
 
     background:#ffd94a;
 
@@ -402,11 +375,10 @@ a{
 
     position:absolute;
 
-    top:-27px;
-
+    top:-32px;
     left:-5px;
 
-    font-size:22px;
+    font-size:27px;
 
     animation:
         flicker .4s infinite alternate;
@@ -414,53 +386,47 @@ a{
 
 .wish-btn{
 
-    padding:15px 30px;
+    padding:18px 35px;
 
-    border:4px solid #8b145e;
+    border:5px solid #8b145e;
 
-    border-radius:18px;
+    border-radius:20px;
 
     background:white;
 
     color:#b01968;
 
-    font-size:clamp(18px,2vw,25px);
+    font-size:25px;
 
     font-weight:bold;
 
     cursor:pointer;
 
     box-shadow:
-        0 6px 0 #8b145e;
-
-    max-width:100%;
+        0 7px 0 #8b145e;
 }
 
 
-/* =====================================
+/* =====================================================
    PAGE 4 — SURPRISE
-===================================== */
+===================================================== */
 
 #surprisePage{
 
-    display:none;
-
     justify-content:center;
-
     align-items:center;
 }
 
 .surprise-box{
 
-    width:min(92vw,850px);
+    width:100%;
+    max-width:900px;
 
-    max-width:100%;
-
-    padding:clamp(30px,5vw,60px);
+    padding:50px 35px;
 
     background:rgba(255,255,255,.25);
 
-    border:4px solid white;
+    border:5px solid white;
 
     border-radius:35px;
 
@@ -472,25 +438,25 @@ a{
 
     color:white;
 
-    font-size:clamp(40px,6vw,80px);
+    font-size:75px;
 
     line-height:1.2;
 
     margin:0;
 
     text-shadow:
-        5px 5px #85125a;
+        6px 6px #85125a;
 
     overflow-wrap:break-word;
 }
 
 .gift{
 
-    font-size:clamp(80px,12vw,140px);
+    font-size:150px;
 
     cursor:pointer;
 
-    margin:25px;
+    margin:30px;
 
     animation:
         bounce 1.2s infinite;
@@ -500,7 +466,7 @@ a{
 
     color:white;
 
-    font-size:clamp(18px,2.2vw,27px);
+    font-size:27px;
 
     font-weight:bold;
 }
@@ -509,9 +475,9 @@ a{
 
     display:none;
 
-    margin-top:30px;
+    margin-top:35px;
 
-    padding:clamp(20px,4vw,40px);
+    padding:30px;
 
     background:white;
 
@@ -519,17 +485,15 @@ a{
 
     color:#891254;
 
-    font-size:clamp(17px,2vw,24px);
+    font-size:23px;
 
-    line-height:1.7;
+    line-height:1.8;
 
     font-weight:bold;
 
     width:100%;
 
     overflow-wrap:break-word;
-
-    word-wrap:break-word;
 }
 
 .continue-btn{
@@ -538,9 +502,9 @@ a{
 
     margin-top:30px;
 
-    padding:15px 30px;
+    padding:18px 30px;
 
-    border:4px solid #8b145e;
+    border:5px solid #8b145e;
 
     border-radius:18px;
 
@@ -548,40 +512,34 @@ a{
 
     color:white;
 
-    font-size:clamp(18px,2vw,25px);
+    font-size:23px;
 
     font-weight:bold;
 
     cursor:pointer;
-
-    max-width:100%;
 }
 
 
-/* =====================================
+/* =====================================================
    PAGE 5 — FINAL
-===================================== */
+===================================================== */
 
 #finalPage{
 
-    display:none;
-
     justify-content:center;
-
     align-items:center;
 }
 
 .final-box{
 
-    width:min(92vw,900px);
+    width:100%;
+    max-width:950px;
 
-    max-width:100%;
-
-    padding:clamp(30px,5vw,60px);
+    padding:50px 35px;
 
     background:rgba(255,255,255,.25);
 
-    border:4px solid white;
+    border:5px solid white;
 
     border-radius:35px;
 
@@ -593,21 +551,21 @@ a{
 
     color:white;
 
-    font-size:clamp(42px,7vw,90px);
+    font-size:85px;
 
     line-height:1.15;
 
     margin:0;
 
     text-shadow:
-        6px 6px #85125a;
+        7px 7px #85125a;
 
     overflow-wrap:break-word;
 }
 
 .final-message{
 
-    margin-top:30px;
+    margin-top:35px;
 
     background:white;
 
@@ -615,33 +573,30 @@ a{
 
     border-radius:25px;
 
-    padding:clamp(20px,4vw,40px);
+    padding:30px;
 
-    font-size:clamp(17px,2vw,24px);
+    font-size:23px;
 
     line-height:1.8;
 
     font-weight:bold;
 
     overflow-wrap:break-word;
-
-    word-wrap:break-word;
 }
 
 .final-heart{
 
-    font-size:clamp(40px,5vw,65px);
+    font-size:65px;
 
     margin-top:25px;
 
-    animation:
-        pulse 1s infinite;
+    animation:pulse 1s infinite;
 }
 
 
-/* =====================================
+/* =====================================================
    BALLOONS
-===================================== */
+===================================================== */
 
 .balloon{
 
@@ -649,7 +604,7 @@ a{
 
     bottom:-120px;
 
-    font-size:clamp(40px,5vw,65px);
+    font-size:65px;
 
     animation:
         floatUp 8s linear infinite;
@@ -685,9 +640,9 @@ a{
 }
 
 
-/* =====================================
+/* =====================================================
    CONFETTI
-===================================== */
+===================================================== */
 
 .confetti{
 
@@ -695,7 +650,7 @@ a{
 
     top:-20px;
 
-    font-size:clamp(18px,2vw,28px);
+    font-size:25px;
 
     animation:
         fall 5s linear infinite;
@@ -705,35 +660,10 @@ a{
     pointer-events:none;
 }
 
-.c1{
-    left:10%;
-    animation-delay:0s;
-}
 
-.c2{
-    left:30%;
-    animation-delay:1s;
-}
-
-.c3{
-    left:50%;
-    animation-delay:2s;
-}
-
-.c4{
-    left:70%;
-    animation-delay:3s;
-}
-
-.c5{
-    left:90%;
-    animation-delay:4s;
-}
-
-
-/* =====================================
+/* =====================================================
    ANIMATIONS
-===================================== */
+===================================================== */
 
 @keyframes pulse{
 
@@ -787,92 +717,111 @@ a{
 }
 
 
-/* =====================================
-   MOBILE
-===================================== */
+/* =====================================================
+   MOBILE — LARGE
+===================================================== */
 
 @media(max-width:600px){
 
     .page{
 
-        padding-left:12px;
-        padding-right:12px;
+        padding:
+            20px
+            12px
+            40px;
     }
+
+
+    /* -------------------------
+       WHATSAPP
+    ------------------------- */
 
     .whatsapp{
 
         width:100%;
+
+        border-radius:18px;
     }
 
     .whatsapp-header{
 
-        font-size:19px;
+        padding:22px;
 
-        padding:18px;
+        font-size:24px;
     }
 
     .whatsapp-body{
 
-        font-size:17px;
+        padding:28px 22px;
 
-        padding:22px;
+        font-size:20px;
+
+        line-height:1.8;
     }
 
     .open-btn{
 
-        font-size:17px;
+        font-size:20px;
 
-        padding:13px 20px;
+        padding:16px 24px;
     }
 
 
-    /* START */
+    /* -------------------------
+       START
+    ------------------------- */
 
     .start-box{
 
-        width:100%;
-
         padding:
-            35px
+            45px
             20px;
+
+        border-radius:30px;
     }
 
     .small-title{
 
-        font-size:19px;
+        font-size:24px;
     }
 
     .big-title{
 
         font-size:
-            clamp(38px,11vw,60px);
+            clamp(45px,13vw,65px);
+
+        margin:25px 0;
     }
 
     .start-text{
 
-        font-size:17px;
+        font-size:20px;
+
+        line-height:1.8;
     }
 
     .start-btn{
 
-        font-size:18px;
+        font-size:21px;
 
         padding:
-            14px 20px;
+            17px 22px;
     }
 
 
-    /* BIRTHDAY */
+    /* -------------------------
+       BIRTHDAY
+    ------------------------- */
 
-    .birthday-content{
+    #birthdayPage{
 
-        padding-top:20px;
+        padding-top:30px;
     }
 
     .birthday-title{
 
         font-size:
-            clamp(38px,11vw,58px);
+            clamp(45px,13vw,65px);
 
         text-shadow:
             4px 4px #85125a;
@@ -880,88 +829,96 @@ a{
 
     .subtitle{
 
-        font-size:17px;
+        font-size:20px;
+
+        padding:0 5px;
     }
 
     .cake-area{
 
-        transform:scale(.82);
+        transform:scale(.9);
 
-        margin-top:10px;
-
-        margin-bottom:10px;
+        margin:
+            20px auto;
     }
 
     .wish-btn{
 
-        font-size:18px;
+        font-size:21px;
 
         padding:
-            13px 22px;
+            16px 25px;
     }
 
 
-    /* SURPRISE */
+    /* -------------------------
+       SURPRISE
+    ------------------------- */
 
     .surprise-box{
 
-        width:100%;
-
         padding:
-            30px 18px;
+            40px 18px;
+
+        border-radius:30px;
     }
 
     .surprise-title{
 
         font-size:
-            clamp(36px,10vw,52px);
+            clamp(40px,12vw,55px);
+
+        text-shadow:
+            4px 4px #85125a;
     }
 
     .gift{
 
-        font-size:90px;
+        font-size:110px;
 
-        margin:20px;
+        margin:25px;
     }
 
     .gift-text{
 
-        font-size:17px;
+        font-size:20px;
     }
 
     .message{
 
-        font-size:16px;
-
         padding:
-            20px 16px;
+            25px 18px;
 
-        line-height:1.65;
+        font-size:19px;
+
+        line-height:1.75;
     }
 
     .continue-btn{
 
-        font-size:17px;
+        font-size:20px;
 
         padding:
-            13px 20px;
+            16px 22px;
     }
 
 
-    /* FINAL */
+    /* -------------------------
+       FINAL
+    ------------------------- */
 
     .final-box{
 
-        width:100%;
-
         padding:
-            30px 18px;
+            40px 18px;
+
+        border-radius:30px;
     }
 
     .final-title{
 
         font-size:
-            clamp(38px,10vw,55px);
+            clamp(45px,13vw,60px);
 
         text-shadow:
             4px 4px #85125a;
@@ -969,24 +926,24 @@ a{
 
     .final-message{
 
-        font-size:16px;
-
         padding:
-            20px 16px;
+            25px 18px;
 
-        line-height:1.65;
+        font-size:19px;
+
+        line-height:1.75;
     }
 
     .final-heart{
 
-        font-size:42px;
+        font-size:48px;
     }
 }
 
 
-/* =====================================
-   VERY SMALL MOBILE
-===================================== */
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
 @media(max-width:380px){
 
@@ -996,38 +953,40 @@ a{
         padding-right:8px;
     }
 
-    .start-box,
-    .surprise-box,
-    .final-box{
+    .whatsapp-header{
 
-        padding-left:14px;
-        padding-right:14px;
+        font-size:22px;
     }
 
-    .birthday-title{
+    .whatsapp-body{
 
-        font-size:34px;
+        font-size:19px;
     }
 
     .big-title{
 
-        font-size:35px;
+        font-size:43px;
+    }
+
+    .birthday-title{
+
+        font-size:43px;
     }
 
     .surprise-title{
 
-        font-size:32px;
+        font-size:38px;
     }
 
     .final-title{
 
-        font-size:34px;
+        font-size:42px;
     }
 
     .message,
     .final-message{
 
-        font-size:15px;
+        font-size:18px;
     }
 }
 
@@ -1038,18 +997,16 @@ a{
 <body>
 
 
-<!-- =====================================
-     PAGE 1 — WHATSAPP
-===================================== -->
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
 
 <div id="linkPage" class="page">
 
     <div class="whatsapp">
 
         <div class="whatsapp-header">
-
             💬 New Message
-
         </div>
 
         <div class="whatsapp-body">
@@ -1079,18 +1036,16 @@ a{
 </div>
 
 
-<!-- =====================================
-     PAGE 2 — START
-===================================== -->
+<!-- =====================================================
+     PAGE 2
+===================================================== -->
 
 <div id="startPage" class="page">
 
     <div class="start-box">
 
         <div class="small-title">
-
             🎀 A little surprise for
-
         </div>
 
         <div class="big-title">
@@ -1127,9 +1082,9 @@ a{
 </div>
 
 
-<!-- =====================================
-     PAGE 3 — BIRTHDAY
-===================================== -->
+<!-- =====================================================
+     PAGE 3
+===================================================== -->
 
 <div id="birthdayPage" class="page">
 
@@ -1142,9 +1097,7 @@ a{
             <br>
 
             <span class="name">
-
                 Someone Special ❤️
-
             </span>
 
         </h1>
@@ -1163,9 +1116,7 @@ a{
                 <div class="candle">
 
                     <div class="flame">
-
                         🔥
-
                     </div>
 
                 </div>
@@ -1186,32 +1137,18 @@ a{
     </div>
 
 
-    <div class="balloon b1">
-        🎈
-    </div>
-
-    <div class="balloon b2">
-        🎈
-    </div>
-
-    <div class="balloon b3">
-        🎈
-    </div>
-
-    <div class="balloon b4">
-        🎈
-    </div>
-
-    <div class="balloon b5">
-        🎈
-    </div>
+    <div class="balloon b1">🎈</div>
+    <div class="balloon b2">🎈</div>
+    <div class="balloon b3">🎈</div>
+    <div class="balloon b4">🎈</div>
+    <div class="balloon b5">🎈</div>
 
 </div>
 
 
-<!-- =====================================
-     PAGE 4 — SURPRISE
-===================================== -->
+<!-- =====================================================
+     PAGE 4
+===================================================== -->
 
 <div id="surprisePage" class="page">
 
@@ -1223,6 +1160,7 @@ a{
 
         </h1>
 
+
         <div
             class="gift"
             onclick="openGift()">
@@ -1230,6 +1168,7 @@ a{
             🎁
 
         </div>
+
 
         <div class="gift-text">
 
@@ -1270,32 +1209,18 @@ a{
     </div>
 
 
-    <div class="confetti c1">
-        🎉
-    </div>
-
-    <div class="confetti c2">
-        ✨
-    </div>
-
-    <div class="confetti c3">
-        🎊
-    </div>
-
-    <div class="confetti c4">
-        💖
-    </div>
-
-    <div class="confetti c5">
-        🎉
-    </div>
+    <div class="confetti c1">🎉</div>
+    <div class="confetti c2">✨</div>
+    <div class="confetti c3">🎊</div>
+    <div class="confetti c4">💖</div>
+    <div class="confetti c5">🎉</div>
 
 </div>
 
 
-<!-- =====================================
-     PAGE 5 — FINAL
-===================================== -->
+<!-- =====================================================
+     PAGE 5
+===================================================== -->
 
 <div id="finalPage" class="page">
 
@@ -1355,94 +1280,98 @@ a{
 
 <script>
 
-/* =====================================
-   CHANGE THESE DETAILS
-===================================== */
+/* =====================================================
+   NAME
+===================================================== */
 
 const birthdayName = "Someone Special";
 
 
-/* =====================================
-   PAGE FUNCTIONS
-===================================== */
+/* =====================================================
+   PAGE 1 → PAGE 2
+===================================================== */
 
 function openStart(){
 
-    document
-        .getElementById("linkPage")
+    document.getElementById("linkPage")
         .style.display = "none";
 
-    document
-        .getElementById("startPage")
+    document.getElementById("startPage")
         .style.display = "flex";
 }
 
 
+/* =====================================================
+   PAGE 2 → PAGE 3
+===================================================== */
+
 function openBirthday(){
 
-    document
-        .getElementById("startPage")
+    document.getElementById("startPage")
         .style.display = "none";
 
-    document
-        .getElementById("birthdayPage")
+    document.getElementById("birthdayPage")
         .style.display = "block";
 
     createConfetti();
 }
 
 
+/* =====================================================
+   PAGE 3 → PAGE 4
+===================================================== */
+
 function makeWish(){
 
-    document
-        .getElementById("birthdayPage")
+    document.getElementById("birthdayPage")
         .style.display = "none";
 
-    document
-        .getElementById("surprisePage")
+    document.getElementById("surprisePage")
         .style.display = "flex";
 }
 
 
+/* =====================================================
+   OPEN GIFT
+===================================================== */
+
 function openGift(){
 
-    document
-        .getElementById("giftMessage")
+    document.getElementById("giftMessage")
         .style.display = "block";
 
-    document
-        .getElementById("continueBtn")
+    document.getElementById("continueBtn")
         .style.display = "inline-block";
 }
 
 
+/* =====================================================
+   PAGE 4 → PAGE 5
+===================================================== */
+
 function openFinal(){
 
-    document
-        .getElementById("surprisePage")
+    document.getElementById("surprisePage")
         .style.display = "none";
 
-    document
-        .getElementById("finalPage")
+    document.getElementById("finalPage")
         .style.display = "flex";
 }
 
 
-/* =====================================
+/* =====================================================
    CONFETTI
-===================================== */
+===================================================== */
 
 function createConfetti(){
 
     const emojis = [
-
         "🎉",
         "🎊",
         "✨",
         "💖",
         "🥳",
         "⭐"
-
     ];
 
     for(let i = 0; i < 25; i++){
@@ -1477,9 +1406,9 @@ function createConfetti(){
 }
 
 
-/* =====================================
-   SET NAME EVERYWHERE
-===================================== */
+/* =====================================================
+   SET NAME
+===================================================== */
 
 document
     .querySelectorAll(".name")
