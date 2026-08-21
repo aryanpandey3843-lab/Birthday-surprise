@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday ❤️</title>
 
 <style>
+
+/* =====================================
+   BASIC
+===================================== */
 
 *{
     box-sizing:border-box;
@@ -15,29 +22,46 @@
 html,
 body{
     margin:0;
+    padding:0;
     width:100%;
     min-height:100%;
 }
 
 body{
-    min-height:100vh;
     font-family:"Courier New",monospace;
+
     background:
-        radial-gradient(circle at top,#ffb6df,#ff72b5 45%,#7b176c);
+        radial-gradient(
+            circle at top,
+            #ffb6df,
+            #ff72b5 45%,
+            #7b176c
+        );
+
     overflow-x:hidden;
 }
 
-/* =========================
-   COMMON
-========================= */
+
+/* =====================================
+   COMMON PAGE
+===================================== */
 
 .page{
     width:100%;
     min-height:100vh;
+
     position:relative;
+
     text-align:center;
+
     overflow-x:hidden;
     overflow-y:auto;
+
+    padding:
+        max(15px,env(safe-area-inset-top))
+        max(15px,env(safe-area-inset-right))
+        max(20px,env(safe-area-inset-bottom))
+        max(15px,env(safe-area-inset-left));
 }
 
 .hidden{
@@ -49,562 +73,970 @@ a{
     font-family:"Courier New",monospace;
 }
 
-/* =========================
-   WHATSAPP PAGE
-========================= */
+
+/* =====================================
+   PAGE 1 — WHATSAPP
+===================================== */
 
 #linkPage{
+
     display:flex;
+
     justify-content:center;
     align-items:center;
-    padding:20px;
 }
 
 .whatsapp{
-    width:370px;
+
+    width:min(90vw,520px);
+
     max-width:100%;
+
     background:#e7ffdb;
-    border-radius:15px;
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+    border-radius:20px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.3);
+
     text-align:left;
+
     overflow:hidden;
 }
 
 .whatsapp-header{
+
     background:#075e54;
+
     color:white;
-    padding:18px;
-    font-size:18px;
+
+    padding:22px;
+
+    font-size:clamp(20px,2vw,28px);
+
     font-weight:bold;
 }
 
 .whatsapp-body{
-    padding:22px;
+
+    padding:clamp(25px,4vw,40px);
+
     color:#333;
-    font-size:16px;
-    line-height:1.6;
+
+    font-size:clamp(18px,2vw,23px);
+
+    line-height:1.7;
 }
 
 .open-btn{
+
     display:inline-block;
-    margin-top:15px;
-    padding:12px 25px;
+
+    margin-top:20px;
+
+    padding:15px 28px;
+
     background:#128c7e;
+
     color:white;
+
     text-decoration:none;
-    border-radius:10px;
+
+    border-radius:12px;
+
     font-weight:bold;
+
+    font-size:clamp(17px,1.8vw,22px);
 }
 
-/* =========================
-   START PAGE
-========================= */
+
+/* =====================================
+   PAGE 2 — START
+===================================== */
 
 #startPage{
+
     display:none;
+
     justify-content:center;
     align-items:center;
-    padding:20px;
 }
 
 .start-box{
-    width:90%;
-    max-width:600px;
-    padding:45px 25px;
+
+    width:min(90vw,850px);
+
+    max-width:100%;
+
+    padding:clamp(35px,6vw,70px);
+
     background:rgba(255,255,255,.18);
-    border:3px solid white;
-    border-radius:30px;
-    box-shadow:0 15px 40px rgba(80,0,60,.3);
+
+    border:4px solid white;
+
+    border-radius:35px;
+
+    box-shadow:
+        0 15px 40px rgba(80,0,60,.3);
 }
 
 .small-title{
+
     color:white;
-    font-size:20px;
+
+    font-size:clamp(20px,2.5vw,30px);
+
     font-weight:bold;
 }
 
 .big-title{
+
     color:white;
-    font-size:clamp(35px,8vw,65px);
-    margin:15px 0;
-    text-shadow:4px 4px #8b145e;
+
+    font-size:clamp(42px,7vw,90px);
+
+    margin:20px 0;
+
+    line-height:1.15;
+
+    text-shadow:5px 5px #8b145e;
+
+    overflow-wrap:break-word;
 }
 
 .start-text{
+
     color:white;
-    font-size:18px;
-    line-height:1.6;
+
+    font-size:clamp(18px,2.3vw,28px);
+
+    line-height:1.7;
 }
 
 .start-btn{
-    margin-top:25px;
-    padding:15px 35px;
+
+    margin-top:30px;
+
+    padding:17px 35px;
+
     border:4px solid #8b145e;
-    border-radius:18px;
+
+    border-radius:20px;
+
     background:#ff2f91;
+
     color:white;
-    font-size:22px;
+
+    font-size:clamp(19px,2vw,26px);
+
     font-weight:bold;
+
     cursor:pointer;
-    box-shadow:0 6px 0 #70104b;
+
+    box-shadow:
+        0 7px 0 #70104b;
+
     max-width:100%;
 }
 
-/* =========================
-   BIRTHDAY PAGE
-========================= */
+
+/* =====================================
+   PAGE 3 — BIRTHDAY
+===================================== */
 
 #birthdayPage{
+
     display:none;
-    padding:30px 15px 40px;
 }
 
 .birthday-content{
-    position:relative;
-    top:auto;
-    left:auto;
-    transform:none;
-    width:100%;
-    max-width:900px;
+
+    width:min(95vw,1100px);
+
+    max-width:100%;
+
     margin:0 auto;
+
+    padding-top:clamp(20px,5vh,70px);
+
+    position:relative;
+
     z-index:10;
 }
 
 .birthday-title{
+
     color:white;
-    font-size:clamp(35px,8vw,70px);
+
+    font-size:clamp(42px,7vw,100px);
+
+    line-height:1.15;
+
     margin:0;
-    text-shadow:5px 5px #85125a;
+
+    text-shadow:
+        6px 6px #85125a;
+
     animation:pulse 1.5s infinite;
+
+    overflow-wrap:break-word;
 }
 
 .name{
+
     color:#fff4a8;
 }
 
 .subtitle{
+
     color:white;
-    font-size:20px;
+
+    font-size:clamp(18px,2.3vw,28px);
+
     font-weight:bold;
-    margin-top:15px;
+
+    margin-top:20px;
+
+    line-height:1.5;
 }
 
-/* =========================
+
+/* =====================================
    CAKE
-========================= */
+===================================== */
 
 .cake-area{
-    margin:30px auto 0;
-    width:220px;
-    height:220px;
+
+    margin:
+        clamp(20px,4vh,40px)
+        auto;
+
+    width:260px;
+
+    height:240px;
+
     position:relative;
+
+    transform:
+        scale(clamp(.8,1vw,1.1));
 }
 
 .cake{
+
     position:absolute;
+
     bottom:25px;
-    left:25px;
+
+    left:45px;
+
     width:170px;
+
     height:90px;
+
     background:#ff77b8;
-    border-radius:15px 15px 25px 25px;
+
+    border-radius:
+        15px 15px 25px 25px;
+
     border:5px solid white;
-    box-shadow:0 8px 0 #a71967;
+
+    box-shadow:
+        0 8px 0 #a71967;
 }
 
 .cake:before{
+
     content:"";
+
     position:absolute;
+
     top:-45px;
+
     left:20px;
+
     width:120px;
+
     height:50px;
+
     background:#fff1f8;
-    border-radius:15px 15px 8px 8px;
+
+    border-radius:
+        15px 15px 8px 8px;
+
     border:5px solid white;
 }
 
 .cake:after{
+
     content:"🎀";
+
     position:absolute;
+
     left:65px;
+
     top:25px;
+
     font-size:40px;
 }
 
 .candle{
+
     position:absolute;
+
     top:-80px;
+
     left:105px;
+
     width:13px;
+
     height:38px;
+
     background:#ffd94a;
+
     border-radius:5px;
+
     z-index:3;
 }
 
 .flame{
+
     position:absolute;
+
     top:-27px;
+
     left:-5px;
+
     font-size:22px;
-    animation:flicker .4s infinite alternate;
+
+    animation:
+        flicker .4s infinite alternate;
 }
 
 .wish-btn{
-    padding:14px 28px;
+
+    padding:15px 30px;
+
     border:4px solid #8b145e;
-    border-radius:16px;
+
+    border-radius:18px;
+
     background:white;
+
     color:#b01968;
-    font-size:20px;
+
+    font-size:clamp(18px,2vw,25px);
+
     font-weight:bold;
+
     cursor:pointer;
-    box-shadow:0 5px 0 #8b145e;
+
+    box-shadow:
+        0 6px 0 #8b145e;
+
     max-width:100%;
 }
 
-/* =========================
-   SURPRISE
-========================= */
+
+/* =====================================
+   PAGE 4 — SURPRISE
+===================================== */
 
 #surprisePage{
+
     display:none;
+
     justify-content:center;
+
     align-items:center;
-    padding:25px 15px;
 }
 
 .surprise-box{
-    width:90%;
-    max-width:650px;
-    padding:35px 25px;
+
+    width:min(92vw,850px);
+
+    max-width:100%;
+
+    padding:clamp(30px,5vw,60px);
+
     background:rgba(255,255,255,.25);
+
     border:4px solid white;
-    border-radius:30px;
-    box-shadow:0 15px 40px rgba(80,0,60,.3);
+
+    border-radius:35px;
+
+    box-shadow:
+        0 15px 40px rgba(80,0,60,.3);
 }
 
 .surprise-title{
+
     color:white;
-    font-size:clamp(35px,7vw,60px);
+
+    font-size:clamp(40px,6vw,80px);
+
+    line-height:1.2;
+
     margin:0;
-    text-shadow:4px 4px #85125a;
+
+    text-shadow:
+        5px 5px #85125a;
+
+    overflow-wrap:break-word;
 }
 
 .gift{
-    font-size:110px;
+
+    font-size:clamp(80px,12vw,140px);
+
     cursor:pointer;
-    margin:20px;
-    animation:bounce 1.2s infinite;
+
+    margin:25px;
+
+    animation:
+        bounce 1.2s infinite;
 }
 
 .gift-text{
+
     color:white;
-    font-size:18px;
+
+    font-size:clamp(18px,2.2vw,27px);
+
     font-weight:bold;
 }
 
 .message{
+
     display:none;
-    margin-top:25px;
-    padding:25px;
+
+    margin-top:30px;
+
+    padding:clamp(20px,4vw,40px);
+
     background:white;
-    border-radius:20px;
+
+    border-radius:25px;
+
     color:#891254;
-    font-size:19px;
+
+    font-size:clamp(17px,2vw,24px);
+
     line-height:1.7;
+
     font-weight:bold;
+
     width:100%;
+
     overflow-wrap:break-word;
+
+    word-wrap:break-word;
 }
 
 .continue-btn{
+
     display:none;
-    margin-top:25px;
-    padding:13px 28px;
+
+    margin-top:30px;
+
+    padding:15px 30px;
+
     border:4px solid #8b145e;
-    border-radius:15px;
+
+    border-radius:18px;
+
     background:#ff2f91;
+
     color:white;
-    font-size:20px;
+
+    font-size:clamp(18px,2vw,25px);
+
     font-weight:bold;
+
     cursor:pointer;
+
     max-width:100%;
 }
 
-/* =========================
-   FINAL PAGE
-========================= */
+
+/* =====================================
+   PAGE 5 — FINAL
+===================================== */
 
 #finalPage{
+
     display:none;
+
     justify-content:center;
+
     align-items:center;
-    padding:25px 15px;
 }
 
 .final-box{
-    width:90%;
-    max-width:700px;
-    padding:35px 25px;
+
+    width:min(92vw,900px);
+
+    max-width:100%;
+
+    padding:clamp(30px,5vw,60px);
+
     background:rgba(255,255,255,.25);
+
     border:4px solid white;
-    border-radius:30px;
-    box-shadow:0 15px 40px rgba(80,0,60,.3);
+
+    border-radius:35px;
+
+    box-shadow:
+        0 15px 40px rgba(80,0,60,.3);
 }
 
 .final-title{
-    color:white;
-    font-size:clamp(38px,8vw,70px);
-    margin:0;
-    text-shadow:5px 5px #85125a;
-}
 
-.final-message{
-    margin-top:25px;
-    background:white;
-    color:#861252;
-    border-radius:20px;
-    padding:25px;
-    font-size:18px;
-    line-height:1.8;
-    font-weight:bold;
+    color:white;
+
+    font-size:clamp(42px,7vw,90px);
+
+    line-height:1.15;
+
+    margin:0;
+
+    text-shadow:
+        6px 6px #85125a;
+
     overflow-wrap:break-word;
 }
 
-.final-heart{
-    font-size:50px;
-    margin-top:20px;
-    animation:pulse 1s infinite;
+.final-message{
+
+    margin-top:30px;
+
+    background:white;
+
+    color:#861252;
+
+    border-radius:25px;
+
+    padding:clamp(20px,4vw,40px);
+
+    font-size:clamp(17px,2vw,24px);
+
+    line-height:1.8;
+
+    font-weight:bold;
+
+    overflow-wrap:break-word;
+
+    word-wrap:break-word;
 }
 
-/* =========================
+.final-heart{
+
+    font-size:clamp(40px,5vw,65px);
+
+    margin-top:25px;
+
+    animation:
+        pulse 1s infinite;
+}
+
+
+/* =====================================
    BALLOONS
-========================= */
+===================================== */
 
 .balloon{
+
     position:absolute;
+
     bottom:-120px;
-    font-size:55px;
-    animation:floatUp 8s linear infinite;
+
+    font-size:clamp(40px,5vw,65px);
+
+    animation:
+        floatUp 8s linear infinite;
+
     opacity:.8;
+
     pointer-events:none;
 }
 
-.b1{left:8%;animation-delay:0s}
-.b2{left:25%;animation-delay:2s}
-.b3{left:45%;animation-delay:4s}
-.b4{left:70%;animation-delay:1s}
-.b5{left:88%;animation-delay:3s}
+.b1{
+    left:8%;
+    animation-delay:0s;
+}
 
-/* =========================
+.b2{
+    left:25%;
+    animation-delay:2s;
+}
+
+.b3{
+    left:45%;
+    animation-delay:4s;
+}
+
+.b4{
+    left:70%;
+    animation-delay:1s;
+}
+
+.b5{
+    left:88%;
+    animation-delay:3s;
+}
+
+
+/* =====================================
    CONFETTI
-========================= */
+===================================== */
 
 .confetti{
+
     position:absolute;
+
     top:-20px;
-    font-size:22px;
-    animation:fall 5s linear infinite;
+
+    font-size:clamp(18px,2vw,28px);
+
+    animation:
+        fall 5s linear infinite;
+
     z-index:20;
+
     pointer-events:none;
 }
 
-.c1{left:10%;animation-delay:0s}
-.c2{left:30%;animation-delay:1s}
-.c3{left:50%;animation-delay:2s}
-.c4{left:70%;animation-delay:3s}
-.c5{left:90%;animation-delay:4s}
+.c1{
+    left:10%;
+    animation-delay:0s;
+}
 
-/* =========================
+.c2{
+    left:30%;
+    animation-delay:1s;
+}
+
+.c3{
+    left:50%;
+    animation-delay:2s;
+}
+
+.c4{
+    left:70%;
+    animation-delay:3s;
+}
+
+.c5{
+    left:90%;
+    animation-delay:4s;
+}
+
+
+/* =====================================
    ANIMATIONS
-========================= */
+===================================== */
 
 @keyframes pulse{
+
     50%{
         transform:scale(1.05);
     }
 }
 
 @keyframes flicker{
-    from{transform:scale(1)}
-    to{transform:scale(1.2)}
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.2);
+    }
 }
 
 @keyframes bounce{
+
     50%{
         transform:translateY(-15px);
     }
 }
 
 @keyframes floatUp{
+
     from{
         transform:translateY(0);
     }
+
     to{
         transform:translateY(-120vh);
     }
 }
 
 @keyframes fall{
+
     from{
-        transform:translateY(-30px) rotate(0deg);
+        transform:
+            translateY(-30px)
+            rotate(0deg);
     }
+
     to{
-        transform:translateY(110vh) rotate(360deg);
+        transform:
+            translateY(110vh)
+            rotate(360deg);
     }
 }
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+
+/* =====================================
+   MOBILE
+===================================== */
 
 @media(max-width:600px){
 
     .page{
-        min-height:100vh;
-    }
 
-    #linkPage{
-        padding:15px;
+        padding-left:12px;
+        padding-right:12px;
     }
 
     .whatsapp{
+
         width:100%;
-        max-width:370px;
     }
 
     .whatsapp-header{
-        padding:15px;
-        font-size:17px;
+
+        font-size:19px;
+
+        padding:18px;
     }
 
     .whatsapp-body{
-        padding:18px;
-        font-size:15px;
+
+        font-size:17px;
+
+        padding:22px;
     }
 
     .open-btn{
-        padding:11px 18px;
-    }
 
-    #startPage{
-        padding:15px;
-    }
-
-    .start-box{
-        width:100%;
-        padding:30px 18px;
-    }
-
-    .small-title{
         font-size:17px;
-    }
 
-    .big-title{
-        font-size:clamp(32px,10vw,50px);
-    }
-
-    .start-text{
-        font-size:16px;
-    }
-
-    .start-btn{
-        font-size:18px;
         padding:13px 20px;
     }
 
-    #birthdayPage{
-        padding:25px 10px 40px;
+
+    /* START */
+
+    .start-box{
+
+        width:100%;
+
+        padding:
+            35px
+            20px;
+    }
+
+    .small-title{
+
+        font-size:19px;
+    }
+
+    .big-title{
+
+        font-size:
+            clamp(38px,11vw,60px);
+    }
+
+    .start-text{
+
+        font-size:17px;
+    }
+
+    .start-btn{
+
+        font-size:18px;
+
+        padding:
+            14px 20px;
+    }
+
+
+    /* BIRTHDAY */
+
+    .birthday-content{
+
+        padding-top:20px;
     }
 
     .birthday-title{
-        font-size:clamp(32px,10vw,55px);
-        text-shadow:3px 3px #85125a;
+
+        font-size:
+            clamp(38px,11vw,58px);
+
+        text-shadow:
+            4px 4px #85125a;
     }
 
     .subtitle{
-        font-size:15px;
-        padding:0 10px;
+
+        font-size:17px;
     }
 
     .cake-area{
-        transform:scale(.78);
-        margin:0 auto;
-        height:190px;
+
+        transform:scale(.82);
+
+        margin-top:10px;
+
+        margin-bottom:10px;
     }
 
     .wish-btn{
-        font-size:17px;
-        padding:12px 20px;
+
+        font-size:18px;
+
+        padding:
+            13px 22px;
     }
 
-    #surprisePage{
-        padding:20px 10px;
-    }
+
+    /* SURPRISE */
 
     .surprise-box{
+
         width:100%;
-        padding:25px 15px;
+
+        padding:
+            30px 18px;
     }
 
     .surprise-title{
-        font-size:clamp(30px,9vw,45px);
+
+        font-size:
+            clamp(36px,10vw,52px);
     }
 
     .gift{
-        font-size:80px;
-        margin:15px;
+
+        font-size:90px;
+
+        margin:20px;
     }
 
     .gift-text{
-        font-size:16px;
+
+        font-size:17px;
     }
 
     .message{
-        padding:18px 15px;
+
         font-size:16px;
-        line-height:1.6;
+
+        padding:
+            20px 16px;
+
+        line-height:1.65;
     }
 
     .continue-btn{
+
         font-size:17px;
-        padding:12px 18px;
+
+        padding:
+            13px 20px;
     }
 
-    #finalPage{
-        padding:20px 10px;
-        align-items:flex-start;
-    }
+
+    /* FINAL */
 
     .final-box{
+
         width:100%;
-        padding:25px 15px;
-        margin-top:20px;
+
+        padding:
+            30px 18px;
     }
 
     .final-title{
-        font-size:clamp(32px,9vw,50px);
-        text-shadow:3px 3px #85125a;
+
+        font-size:
+            clamp(38px,10vw,55px);
+
+        text-shadow:
+            4px 4px #85125a;
     }
 
     .final-message{
-        padding:18px 15px;
-        font-size:15px;
+
+        font-size:16px;
+
+        padding:
+            20px 16px;
+
         line-height:1.65;
     }
 
     .final-heart{
-        font-size:40px;
+
+        font-size:42px;
+    }
+}
+
+
+/* =====================================
+   VERY SMALL MOBILE
+===================================== */
+
+@media(max-width:380px){
+
+    .page{
+
+        padding-left:8px;
+        padding-right:8px;
     }
 
+    .start-box,
+    .surprise-box,
+    .final-box{
+
+        padding-left:14px;
+        padding-right:14px;
+    }
+
+    .birthday-title{
+
+        font-size:34px;
+    }
+
+    .big-title{
+
+        font-size:35px;
+    }
+
+    .surprise-title{
+
+        font-size:32px;
+    }
+
+    .final-title{
+
+        font-size:34px;
+    }
+
+    .message,
+    .final-message{
+
+        font-size:15px;
+    }
 }
 
 </style>
+
 </head>
 
 <body>
+
 
 <!-- =====================================
      PAGE 1 — WHATSAPP
@@ -615,7 +1047,9 @@ a{
     <div class="whatsapp">
 
         <div class="whatsapp-header">
+
             💬 New Message
+
         </div>
 
         <div class="whatsapp-body">
@@ -629,10 +1063,13 @@ a{
 
             <br>
 
-            <a href="#"
-               class="open-btn"
-               onclick="openStart();return false;">
-               Open Message 💗
+            <a
+                href="#"
+                class="open-btn"
+                onclick="openStart();return false;">
+
+                Open Message 💗
+
             </a>
 
         </div>
@@ -651,11 +1088,19 @@ a{
     <div class="start-box">
 
         <div class="small-title">
+
             🎀 A little surprise for
+
         </div>
 
         <div class="big-title">
-            <span class="name">Someone Special</span> ❤️
+
+            <span class="name">
+                Someone Special
+            </span>
+
+            ❤️
+
         </div>
 
         <div class="start-text">
@@ -697,7 +1142,9 @@ a{
             <br>
 
             <span class="name">
+
                 Someone Special ❤️
+
             </span>
 
         </h1>
@@ -708,6 +1155,7 @@ a{
 
         </div>
 
+
         <div class="cake-area">
 
             <div class="cake">
@@ -715,7 +1163,9 @@ a{
                 <div class="candle">
 
                     <div class="flame">
+
                         🔥
+
                     </div>
 
                 </div>
@@ -723,6 +1173,7 @@ a{
             </div>
 
         </div>
+
 
         <button
             class="wish-btn"
@@ -734,11 +1185,26 @@ a{
 
     </div>
 
-    <div class="balloon b1">🎈</div>
-    <div class="balloon b2">🎈</div>
-    <div class="balloon b3">🎈</div>
-    <div class="balloon b4">🎈</div>
-    <div class="balloon b5">🎈</div>
+
+    <div class="balloon b1">
+        🎈
+    </div>
+
+    <div class="balloon b2">
+        🎈
+    </div>
+
+    <div class="balloon b3">
+        🎈
+    </div>
+
+    <div class="balloon b4">
+        🎈
+    </div>
+
+    <div class="balloon b5">
+        🎈
+    </div>
 
 </div>
 
@@ -752,7 +1218,9 @@ a{
     <div class="surprise-box">
 
         <h1 class="surprise-title">
+
             One More Surprise 🎁
+
         </h1>
 
         <div
@@ -768,6 +1236,7 @@ a{
             Tap the gift to open it 💕
 
         </div>
+
 
         <div
             id="giftMessage"
@@ -788,6 +1257,7 @@ a{
 
         </div>
 
+
         <button
             id="continueBtn"
             class="continue-btn"
@@ -799,11 +1269,26 @@ a{
 
     </div>
 
-    <div class="confetti c1">🎉</div>
-    <div class="confetti c2">✨</div>
-    <div class="confetti c3">🎊</div>
-    <div class="confetti c4">💖</div>
-    <div class="confetti c5">🎉</div>
+
+    <div class="confetti c1">
+        🎉
+    </div>
+
+    <div class="confetti c2">
+        ✨
+    </div>
+
+    <div class="confetti c3">
+        🎊
+    </div>
+
+    <div class="confetti c4">
+        💖
+    </div>
+
+    <div class="confetti c5">
+        🎉
+    </div>
 
 </div>
 
@@ -821,6 +1306,7 @@ a{
             HAPPY BIRTHDAY ❤️
 
         </h1>
+
 
         <div class="final-message">
 
@@ -855,8 +1341,11 @@ a{
 
         </div>
 
+
         <div class="final-heart">
+
             💖✨🎂✨💖
+
         </div>
 
     </div>
@@ -879,58 +1368,63 @@ const birthdayName = "Someone Special";
 
 function openStart(){
 
-    document.getElementById("linkPage")
+    document
+        .getElementById("linkPage")
         .style.display = "none";
 
-    document.getElementById("startPage")
+    document
+        .getElementById("startPage")
         .style.display = "flex";
-
 }
 
 
 function openBirthday(){
 
-    document.getElementById("startPage")
+    document
+        .getElementById("startPage")
         .style.display = "none";
 
-    document.getElementById("birthdayPage")
+    document
+        .getElementById("birthdayPage")
         .style.display = "block";
 
     createConfetti();
-
 }
 
 
 function makeWish(){
 
-    document.getElementById("birthdayPage")
+    document
+        .getElementById("birthdayPage")
         .style.display = "none";
 
-    document.getElementById("surprisePage")
+    document
+        .getElementById("surprisePage")
         .style.display = "flex";
-
 }
 
 
 function openGift(){
 
-    document.getElementById("giftMessage")
+    document
+        .getElementById("giftMessage")
         .style.display = "block";
 
-    document.getElementById("continueBtn")
+    document
+        .getElementById("continueBtn")
         .style.display = "inline-block";
-
 }
 
 
 function openFinal(){
 
-    document.getElementById("surprisePage")
+    document
+        .getElementById("surprisePage")
         .style.display = "none";
 
-    document.getElementById("finalPage")
+    document
+        .getElementById("finalPage")
         .style.display = "flex";
-
 }
 
 
@@ -941,12 +1435,14 @@ function openFinal(){
 function createConfetti(){
 
     const emojis = [
+
         "🎉",
         "🎊",
         "✨",
         "💖",
         "🥳",
         "⭐"
+
     ];
 
     for(let i = 0; i < 25; i++){
@@ -954,12 +1450,16 @@ function createConfetti(){
         const confetti =
             document.createElement("div");
 
-        confetti.className = "confetti";
+        confetti.className =
+            "confetti";
 
         confetti.innerText =
-            emojis[Math.floor(
-                Math.random() * emojis.length
-            )];
+            emojis[
+                Math.floor(
+                    Math.random() *
+                    emojis.length
+                )
+            ];
 
         confetti.style.left =
             Math.random() * 100 + "%";
@@ -970,11 +1470,10 @@ function createConfetti(){
         confetti.style.animationDelay =
             Math.random() * 3 + "s";
 
-        document.getElementById("birthdayPage")
+        document
+            .getElementById("birthdayPage")
             .appendChild(confetti);
-
     }
-
 }
 
 
@@ -982,7 +1481,8 @@ function createConfetti(){
    SET NAME EVERYWHERE
 ===================================== */
 
-document.querySelectorAll(".name")
+document
+    .querySelectorAll(".name")
     .forEach(function(element){
 
         element.innerText =
