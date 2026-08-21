@@ -1,0 +1,860 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    overflow:hidden;
+    font-family:"Courier New",monospace;
+    background:
+        radial-gradient(circle at top,#ffb6df,#ff72b5 45%,#7b176c);
+}
+
+.page{
+    width:100%;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+}
+
+/* =========================
+   COMMON
+========================= */
+
+.hidden{
+    display:none !important;
+}
+
+button,
+a{
+    font-family:"Courier New",monospace;
+}
+
+/* =========================
+   WHATSAPP PAGE
+========================= */
+
+#linkPage{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.whatsapp{
+    width:370px;
+    max-width:90%;
+    background:#e7ffdb;
+    border-radius:15px;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+    text-align:left;
+    overflow:hidden;
+}
+
+.whatsapp-header{
+    background:#075e54;
+    color:white;
+    padding:18px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.whatsapp-body{
+    padding:22px;
+    color:#333;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.open-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 25px;
+    background:#128c7e;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* =========================
+   START PAGE
+========================= */
+
+#startPage{
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.start-box{
+    width:90%;
+    max-width:600px;
+    padding:45px 25px;
+    background:rgba(255,255,255,.18);
+    border:3px solid white;
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(80,0,60,.3);
+}
+
+.small-title{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.big-title{
+    color:white;
+    font-size:clamp(35px,8vw,65px);
+    margin:15px 0;
+    text-shadow:4px 4px #8b145e;
+}
+
+.start-text{
+    color:white;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.start-btn{
+    margin-top:25px;
+    padding:15px 35px;
+    border:4px solid #8b145e;
+    border-radius:18px;
+    background:#ff2f91;
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 6px 0 #70104b;
+}
+
+/* =========================
+   BIRTHDAY PAGE
+========================= */
+
+#birthdayPage{
+    display:none;
+}
+
+.birthday-content{
+    position:absolute;
+    top:8%;
+    left:50%;
+    transform:translateX(-50%);
+    width:92%;
+    z-index:10;
+}
+
+.birthday-title{
+    color:white;
+    font-size:clamp(35px,8vw,70px);
+    margin:0;
+    text-shadow:5px 5px #85125a;
+    animation:pulse 1.5s infinite;
+}
+
+.name{
+    color:#fff4a8;
+}
+
+.subtitle{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+/* =========================
+   CAKE
+========================= */
+
+.cake-area{
+    margin:30px auto 0;
+    width:220px;
+    height:220px;
+    position:relative;
+}
+
+.cake{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    width:170px;
+    height:90px;
+    background:#ff77b8;
+    border-radius:15px 15px 25px 25px;
+    border:5px solid white;
+    box-shadow:0 8px 0 #a71967;
+}
+
+.cake:before{
+    content:"";
+    position:absolute;
+    top:-45px;
+    left:20px;
+    width:120px;
+    height:50px;
+    background:#fff1f8;
+    border-radius:15px 15px 8px 8px;
+    border:5px solid white;
+}
+
+.cake:after{
+    content:"🎀";
+    position:absolute;
+    left:65px;
+    top:25px;
+    font-size:40px;
+}
+
+.candle{
+    position:absolute;
+    top:-80px;
+    left:105px;
+    width:13px;
+    height:38px;
+    background:#ffd94a;
+    border-radius:5px;
+    z-index:3;
+}
+
+.flame{
+    position:absolute;
+    top:-27px;
+    left:-5px;
+    font-size:22px;
+    animation:flicker .4s infinite alternate;
+}
+
+.wish-btn{
+    padding:14px 28px;
+    border:4px solid #8b145e;
+    border-radius:16px;
+    background:white;
+    color:#b01968;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 5px 0 #8b145e;
+}
+
+/* =========================
+   SURPRISE
+========================= */
+
+#surprisePage{
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.surprise-box{
+    width:90%;
+    max-width:650px;
+    padding:35px 25px;
+    background:rgba(255,255,255,.25);
+    border:4px solid white;
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(80,0,60,.3);
+}
+
+.surprise-title{
+    color:white;
+    font-size:clamp(35px,7vw,60px);
+    margin:0;
+    text-shadow:4px 4px #85125a;
+}
+
+.gift{
+    font-size:110px;
+    cursor:pointer;
+    margin:20px;
+    animation:bounce 1.2s infinite;
+}
+
+.gift-text{
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.message{
+    display:none;
+    margin-top:25px;
+    padding:25px;
+    background:white;
+    border-radius:20px;
+    color:#891254;
+    font-size:19px;
+    line-height:1.7;
+    font-weight:bold;
+}
+
+.continue-btn{
+    display:none;
+    margin-top:25px;
+    padding:13px 28px;
+    border:4px solid #8b145e;
+    border-radius:15px;
+    background:#ff2f91;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* =========================
+   FINAL PAGE
+========================= */
+
+#finalPage{
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.final-box{
+    width:90%;
+    max-width:700px;
+    padding:35px 25px;
+    background:rgba(255,255,255,.25);
+    border:4px solid white;
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(80,0,60,.3);
+}
+
+.final-title{
+    color:white;
+    font-size:clamp(38px,8vw,70px);
+    margin:0;
+    text-shadow:5px 5px #85125a;
+}
+
+.final-message{
+    margin-top:25px;
+    background:white;
+    color:#861252;
+    border-radius:20px;
+    padding:25px;
+    font-size:18px;
+    line-height:1.8;
+    font-weight:bold;
+}
+
+.final-heart{
+    font-size:50px;
+    margin-top:20px;
+    animation:pulse 1s infinite;
+}
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon{
+    position:absolute;
+    bottom:-120px;
+    font-size:55px;
+    animation:floatUp 8s linear infinite;
+    opacity:.8;
+}
+
+.b1{left:8%;animation-delay:0s}
+.b2{left:25%;animation-delay:2s}
+.b3{left:45%;animation-delay:4s}
+.b4{left:70%;animation-delay:1s}
+.b5{left:88%;animation-delay:3s}
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+    position:absolute;
+    top:-20px;
+    font-size:22px;
+    animation:fall 5s linear infinite;
+    z-index:20;
+}
+
+.c1{left:10%;animation-delay:0s}
+.c2{left:30%;animation-delay:1s}
+.c3{left:50%;animation-delay:2s}
+.c4{left:70%;animation-delay:3s}
+.c5{left:90%;animation-delay:4s}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.05);
+    }
+}
+
+@keyframes flicker{
+    from{transform:scale(1)}
+    to{transform:scale(1.2)}
+}
+
+@keyframes bounce{
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-30px) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+@media(max-width:600px){
+
+    .birthday-content{
+        top:7%;
+    }
+
+    .cake-area{
+        transform:scale(.85);
+        margin-top:15px;
+    }
+
+    .subtitle{
+        font-size:16px;
+    }
+
+    .final-message{
+        font-size:16px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================
+     PAGE 1 — WHATSAPP
+===================================== -->
+
+<div id="linkPage" class="page">
+
+    <div class="whatsapp">
+
+        <div class="whatsapp-header">
+            💬 New Message
+        </div>
+
+        <div class="whatsapp-body">
+
+            Someone has sent you a very special
+            birthday surprise 🎁❤️
+
+            <br>
+
+            Don't ignore this message 😌
+
+            <br>
+
+            <a href="#"
+               class="open-btn"
+               onclick="openStart();return false;">
+               Open Message 💗
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     PAGE 2 — START
+===================================== -->
+
+<div id="startPage" class="page">
+
+    <div class="start-box">
+
+        <div class="small-title">
+            🎀 A little surprise for
+        </div>
+
+        <div class="big-title">
+            <span class="name">Someone Special</span> ❤️
+        </div>
+
+        <div class="start-text">
+
+            Today is not an ordinary day...
+
+            <br>
+
+            Because someone very special
+            was born today. 🥰
+
+        </div>
+
+        <button
+            class="start-btn"
+            onclick="openBirthday()">
+
+            Open Your Surprise 🎁
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     PAGE 3 — BIRTHDAY
+===================================== -->
+
+<div id="birthdayPage" class="page">
+
+    <div class="birthday-content">
+
+        <h1 class="birthday-title">
+
+            HAPPY BIRTHDAY 🎂
+
+            <br>
+
+            <span class="name">
+                Someone Special ❤️
+            </span>
+
+        </h1>
+
+        <div class="subtitle">
+
+            May your smile stay this beautiful forever ✨
+
+        </div>
+
+
+        <div class="cake-area">
+
+            <div class="cake">
+
+                <div class="candle">
+
+                    <div class="flame">
+                        🔥
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="wish-btn"
+            onclick="makeWish()">
+
+            🎂 Make a Wish
+
+        </button>
+
+    </div>
+
+
+    <div class="balloon b1">🎈</div>
+    <div class="balloon b2">🎈</div>
+    <div class="balloon b3">🎈</div>
+    <div class="balloon b4">🎈</div>
+    <div class="balloon b5">🎈</div>
+
+</div>
+
+
+<!-- =====================================
+     PAGE 4 — SURPRISE
+===================================== -->
+
+<div id="surprisePage" class="page">
+
+    <div class="surprise-box">
+
+        <h1 class="surprise-title">
+            One More Surprise 🎁
+        </h1>
+
+        <div
+            class="gift"
+            onclick="openGift()">
+
+            🎁
+
+        </div>
+
+        <div class="gift-text">
+
+            Tap the gift to open it 💕
+            
+        </div>
+
+
+        <div
+            id="giftMessage"
+            class="message">
+
+            Happy Birthday! 🥳❤️
+
+            <br><br>
+
+            I hope this year brings you
+            endless happiness, beautiful memories,
+            success and lots of reasons to smile.
+
+            <br><br>
+
+            You deserve all the good things
+            life has to offer. ✨
+
+        </div>
+
+
+        <button
+            id="continueBtn"
+            class="continue-btn"
+            onclick="openFinal()">
+
+            One Last Thing ❤️
+
+        </button>
+
+    </div>
+
+
+    <div class="confetti c1">🎉</div>
+    <div class="confetti c2">✨</div>
+    <div class="confetti c3">🎊</div>
+    <div class="confetti c4">💖</div>
+    <div class="confetti c5">🎉</div>
+
+</div>
+
+
+<!-- =====================================
+     PAGE 5 — FINAL
+===================================== -->
+
+<div id="finalPage" class="page">
+
+    <div class="final-box">
+
+        <h1 class="final-title">
+
+            HAPPY BIRTHDAY ❤️
+
+        </h1>
+
+
+        <div class="final-message">
+
+            Dear <b>Someone Special</b>,
+
+            <br><br>
+
+            On your special day, I just want
+            to remind you how amazing you are. ❤️
+
+            <br><br>
+
+            Keep smiling, keep dreaming,
+            keep being the wonderful person
+            you are.
+
+            <br><br>
+
+            May every new day bring you
+            something beautiful.
+
+            <br><br>
+
+            And may this birthday be the
+            beginning of your happiest year yet. 🥰
+
+            <br><br>
+
+            <b>
+                Once again... HAPPY BIRTHDAY! 🎂🎉
+            </b>
+
+        </div>
+
+
+        <div class="final-heart">
+            💖✨🎂✨💖
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================
+   CHANGE THESE DETAILS
+===================================== */
+
+const birthdayName = "Someone Special";
+
+
+/* =====================================
+   PAGE FUNCTIONS
+===================================== */
+
+function openStart(){
+
+    document.getElementById("linkPage")
+        .style.display = "none";
+
+    document.getElementById("startPage")
+        .style.display = "flex";
+
+}
+
+
+function openBirthday(){
+
+    document.getElementById("startPage")
+        .style.display = "none";
+
+    document.getElementById("birthdayPage")
+        .style.display = "block";
+
+    createConfetti();
+
+}
+
+
+function makeWish(){
+
+    document.getElementById("birthdayPage")
+        .style.display = "none";
+
+    document.getElementById("surprisePage")
+        .style.display = "flex";
+
+}
+
+
+function openGift(){
+
+    document.getElementById("giftMessage")
+        .style.display = "block";
+
+    document.getElementById("continueBtn")
+        .style.display = "inline-block";
+
+}
+
+
+function openFinal(){
+
+    document.getElementById("surprisePage")
+        .style.display = "none";
+
+    document.getElementById("finalPage")
+        .style.display = "flex";
+
+}
+
+
+/* =====================================
+   CONFETTI
+===================================== */
+
+function createConfetti(){
+
+    const emojis = [
+        "🎉",
+        "🎊",
+        "✨",
+        "💖",
+        "🥳",
+        "⭐"
+    ];
+
+    for(let i = 0; i < 25; i++){
+
+        const confetti =
+            document.createElement("div");
+
+        confetti.className = "confetti";
+
+        confetti.innerText =
+            emojis[Math.floor(
+                Math.random() * emojis.length
+            )];
+
+        confetti.style.left =
+            Math.random() * 100 + "%";
+
+        confetti.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        confetti.style.animationDelay =
+            Math.random() * 3 + "s";
+
+        document.getElementById("birthdayPage")
+            .appendChild(confetti);
+
+    }
+
+}
+
+
+/* =====================================
+   SET NAME EVERYWHERE
+===================================== */
+
+document.querySelectorAll(".name")
+    .forEach(function(element){
+
+        element.innerText =
+            birthdayName;
+
+    });
+
+</script>
+
+</body>
+</html>
+```
